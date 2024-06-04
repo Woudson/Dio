@@ -1,4 +1,4 @@
 # course-java-dio
-Learning Git with github
+Aprendendo com bootcamp da DIO
 
 Lets go!
