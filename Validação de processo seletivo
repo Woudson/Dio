@@ -1,0 +1,52 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class SistemaContador {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int contador = 0;
+        boolean continuar = true;
+
+        while (continuar) {
+            System.out.println("Selecione uma opção:");
+            System.out.println("1: Incrementar contador");
+            System.out.println("2: Decrementar contador");
+            System.out.println("3: Resetar contador");
+            System.out.println("4: Exibir valor do contador");
+            System.out.println("0: Sair");
+
+            try {
+                int opcao = scanner.nextInt();
+
+                switch (opcao) {
+                    case 1:
+                        contador++;
+                        System.out.println("Contador incrementado. Valor atual: " + contador);
+                        break;
+                    case 2:
+                        contador--;
+                        System.out.println("Contador decrementado. Valor atual: " + contador);
+                        break;
+                    case 3:
+                        contador = 0;
+                        System.out.println("Contador resetado. Valor atual: " + contador);
+                        break;
+                    case 4:
+                        System.out.println("Valor atual do contador: " + contador);
+                        break;
+                    case 0:
+                        System.out.println("Programa encerrado.");
+                        continuar = false;
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida. Por favor, insira um número.");
+                scanner.next(); // Limpar a entrada inválida
+            }
+        }
+        scanner.close();
+    }
+}
